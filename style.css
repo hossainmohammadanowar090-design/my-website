@@ -1,0 +1,230 @@
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+	
+
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+#mainNav {
+    background: #e4dcdc;
+    border-bottom: 4px solid red;
+    position: relative;
+}
+
+/* Banner Image */
+#mainNav img:first-child {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* ===============================
+   LOGO AREA
+================================ */
+#Logosize {
+    width: 1170px;
+    margin: auto;
+    position: relative;
+}
+
+#Logo {
+    width: 130px;
+    float: left;
+    padding: 15px 0;
+    text-align: center;
+}
+
+#Logo img {
+    width: 150px;
+}
+
+/* ===============================
+   MAIN MENU
+================================ */
+menu,
+menu li,
+#primarymenu,
+#primarymenu li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#primarymenu {
+    background: black;
+    overflow: visible;
+}
+
+#primarymenu li {
+    float: left;
+    position: relative;
+}
+
+#primarymenu li a {
+    display: block;
+    padding: 22px 14px;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#primarymenu li a:hover {
+    background: black;
+    color: white;
+    transition: 0.3s;
+}
+
+/* clearfix */
+#primarymenu::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* ===============================
+   DROPDOWN MENU
+================================ */
+.service-menu {
+    position: relative;
+}
+
+#newli li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#newli {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    background: orange;
+    min-width: 200px;
+    display: none;
+    z-index: 9999;
+}
+
+/* show dropdown */
+.service-menu:hover #newli {
+    display: block;
+}
+
+/* dropdown links */
+#newli li a {
+    display: block;
+    padding: 12px 15px;
+    color: #000;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+
+/* hover */
+#newli li a:hover {
+    background: red;
+    color: #fff;
+	transform: translateX(50px);
+}
+
+/* active slide effect */
+#newli li a:active {
+    transform: translateX(10px);
+}
+
+/* ===============================
+   FOOTER
+================================ */
+#footer {
+    background: #000;
+    color: #aab3b4;
+    padding: 50px 0;
+}
+
+.footer-container {
+    width: 1170px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.footer-box {
+    flex:1;
+}
+
+.footer-box:nth-child(2){
+    margin-right:60px;   /* চাইলে 40px / 80px করো */
+}
+
+
+.footer-box h2 {
+    color: #fff;
+    font-size: 20px;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-box p {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box ul li {
+    border-bottom: 1px solid #333;
+}
+
+.footer-box ul li a {
+    display: block;
+    padding: 6px 0;
+    color: #69d41b;
+    text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Subscribe */
+.footer-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+.footer-box button {
+    width: 100%;
+    padding: 10px;
+    background: #41d1ce;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+

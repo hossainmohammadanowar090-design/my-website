@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Tutorial</title>
+    <link rel="stylesheet" href="sliderassets/styles.css" media="all">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+    <!-- FlexSlider -->
+    <script src="sliderassets/js/jquery.flexslider-min.js"></script>
+
+    <style>
+        /* Reset & basic */
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: Arial, sans-serif; font-size: 25px; line-height: 25px; }
+
+        /* Navbar */
+        #mainNav {
+            position: relative;
+            border-bottom:4px solid red;
+            background:#e4dcdc;
+        }
+
+        #mainNav img:first-child {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display:block;
+        }
+
+        #primarymenu {
+            list-style:none;
+            background:#e4dcdc;
+        }
+
+        #primarymenu li {
+            float:left;
+            position: relative;
+        }
+
+        #primarymenu li a {
+            color:#070707;
+            font-weight:bold;
+            text-decoration:none;                			
+            padding:22px 14px;
+            display:block;
+        }
+
+        #primarymenu li a:hover {
+            background:green;
+            color:white;
+            transition: all 0.3s;
+        }
+
+        /* Dropdown */
+        #newli {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            background: orange;
+            min-width: 200px;
+            z-index: 1000;
+        }
+
+        #newli li {
+            float:none;
+        }
+
+        #newli li a {
+            padding: 12px 15px;
+            display:block;
+        }
+
+        #newli li:hover a {
+            background: #ff0000;
+        }
+
+        /* Show dropdown on hover */
+        .service-menu:hover #newli {
+            display: block;
+        }
+
+        /* Logo */
+        #Logo { width:130px; float:left; padding:15px 0px; text-align:center; }
+        #Logo img { width:150px; }
+
+        #Logosize { width:1170px; margin:auto; }
+
+        /* Footer (same as before) */
+        footer {
+            margin-top:50px;
+            background: #080808;
+            color:#aab3b4;
+            padding:30px 0;
+            width:100%;
+            display:table;
+            font-family: Arial, sans-serif;
+        }
+
+        footer h2 {
+            border-bottom: 1px solid #ddd;
+            font-weight:bold;
+            font-size:20px;
+            margin-bottom:15px;
+            padding-bottom:14px;
+        }
+
+        /* other footer styles unchanged */
+    </style>
+
+    <script>
+        $(window).load(function() {
+            $('.flexslider').flexslider({
+                animation: "fade"
+            });
+        });
+    </script>
+</head>
+
+<body> 
+<header>
+    <nav id="mainNav">
+        <img src="sliderassets/images/baner photo/vecteezy_walkway-in-garden_3737598.jpg" alt="Banner">
+
+        <div id="Logosize">
+            <div id="Logo"></div>
+
+            <menu id="menu">
+                <ul id="primarymenu">
+                    <li><a href="#">Home</a></li>
+                    <li class="service-menu">
+                        <a href="#">Service</a>
+                        <ul id="newli">
+                            <li><a href="#">Web Design</a></li>
+   <li><a href="#">Graphic Design</a></li>
+   <li><a href="#">Design</a></li>
+   <li><a href="#">Apps Development</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </menu>
+        </div>
+    </nav>
+</header>
+
+<section id="Homeslider">
+    <div class="flexslider">
+        <ul class="slides">
+            <li><a href="#"><img src="sliderassets/images/slider/slide1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="sliderassets/images/slider/slide2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="sliderassets/images/slider/slide3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="sliderassets/images/slider/slide4.jpg" alt=""></a></li>
+        </ul>
+    </div>
+</section>
+
+<footer id="footer">
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h2>About Us</h2>
+      <p>
+        The bodycon dress is a key silhouette for this season's party girl;
+        from sleek colour-block panelling to geometric prints the bodycon.
+      </p>
+    </div>
+
+    <div class="footer-box">
+      <h2>Auditional Menu</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h2>Custom Link</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-box">
+      <h2>Subscribe</h2>
+      <input type="text" placeholder="Your Email">
+      <input type="text" placeholder="Your Name">
+      <button>Subscribe</button>
+    </div>
+
+
+
+<script>
+$(document).ready(function(){
+    // Hide dropdown initially
+    $("#primarymenu .submenu").hide();
+
+    // Toggle on click
+    $("#primarymenu .service-menu > a").click(function(e){
+        e.preventDefault(); // link click stop
+        $(this).siblings(".submenu").slideToggle(200);
+    });
+
+    // Optional: hide other dropdowns when opening one
+    $("#primarymenu .service-menu > a").click(function(){
+        $("#primarymenu .service-menu > a").not(this).siblings(".submenu").slideUp(200);
+    });
+});
+</script>
+
+
+
